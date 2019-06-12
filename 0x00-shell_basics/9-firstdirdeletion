@@ -1,0 +1,3 @@
+#!/bin/bash
+rm -r /tmp/holberton
+#is not the finish line
