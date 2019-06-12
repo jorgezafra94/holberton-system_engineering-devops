@@ -1,0 +1,1 @@
+*this project is about main commands of bash shell*
