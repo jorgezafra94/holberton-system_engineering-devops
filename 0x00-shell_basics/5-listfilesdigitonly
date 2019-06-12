@@ -1,0 +1,3 @@
+#!/bin/bash
+ls -la |sort -k 9
+#not finish here
