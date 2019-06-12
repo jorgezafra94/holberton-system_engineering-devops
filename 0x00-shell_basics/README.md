@@ -1,0 +1,1 @@
+*in this directory you are going to find the basic commands in bash shell in script forms*
