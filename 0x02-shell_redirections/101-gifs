@@ -1,2 +1,2 @@
 #!/bin/bash
-find .git -type f |tr -d .git | LC_ALL=C sort --ignore-case
+find **/*.gif -type f -printf "%f\n" |cut -d. -f1 | LC_ALL=C sort --ignore-case
