@@ -1,2 +1,2 @@
 #!/bin/bash
-tr -c [:alpha:],"\n" " "|tr -d " "|cut -c 1|fmt -u|tr -d " "
+cut -c 1|fmt -u|tr -d ' '
