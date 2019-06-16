@@ -1,2 +1,2 @@
 #!/bin/bash
-find *.git -type f |tr -d .git | LC_ALL=C sort --ignore-case
+find .git -type f |tr -d .git | LC_ALL=C sort --ignore-case
