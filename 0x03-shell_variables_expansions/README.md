@@ -1,0 +1,1 @@
+*this project is about shell initialization, first variables, alias and others first step of shell config*
