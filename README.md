@@ -1,1 +1,1 @@
-*this project is about main commands of bash shell*
+*this project is about the main thing about bash shell, like give permissions to a file, scripts, shebang, basic commands, redirections*
