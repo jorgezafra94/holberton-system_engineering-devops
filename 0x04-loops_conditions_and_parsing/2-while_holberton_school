@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# print holberton school using while
 x=0
 while [ $x -lt 10 ]
 do
