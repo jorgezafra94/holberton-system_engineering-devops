@@ -1,15 +1,13 @@
 #!/usr/bin/env bash
 # using if statements for print holberton or hi
-x=0
-while [ $x -lt 10 ]
+x=1
+while [ $x -le 10 ]
 do
-    if [ $x -eq 8 ]
+    if [ $x -eq 9 ]
 	then
 	echo "Hi"
-	fi
-    if [ $x -ne 8 ]
-	then
+    else
 	echo "Holberton School"
-	fi
+    fi
   x=$(( x + 1 ))
 done
