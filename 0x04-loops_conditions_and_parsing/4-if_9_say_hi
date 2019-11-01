@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# using if statements for print holberton or hi
 x=0
 while [ $x -lt 10 ]
 do
