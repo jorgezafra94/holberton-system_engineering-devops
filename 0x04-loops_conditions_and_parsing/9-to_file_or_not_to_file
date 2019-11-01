@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# verify if holberton file exist and its properties
 file="holbertonschool"
 if [ -e $file ]
     then
