@@ -27,12 +27,12 @@ case "$1" in
 	echo "manage_my_process stopped"
 	;;
     restart)
-	stop
-	start
+	restart
 	echo "manage_my_process restarted"
 	;;
     *)
 	echo "Usage: manage_my_process {start|stop|restart}"
+	;;
 esac
 
 exit 0
