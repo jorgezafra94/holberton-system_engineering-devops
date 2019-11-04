@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# daemons files, init files
+# init script control over the daemon
 # variables $0 $1 are like argv
 . /lib/lsb/init-functions
 
