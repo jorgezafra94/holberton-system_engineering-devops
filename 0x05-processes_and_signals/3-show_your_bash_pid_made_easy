@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#get the PID of bash process
+list="$(pidof bash)"
+for i in $list
+do
+    echo -n $i
+    echo " bash"
+done
