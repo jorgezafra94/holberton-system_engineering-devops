@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-# init script control over the daemon
-# variables $0 $1 are like argv
+# init script control over the daemon variables $0 $1 are like argv
 . /lib/lsb/init-functions
 
 start() {
@@ -11,6 +10,12 @@ start() {
 stop() {
     pkill -f manage_my_process &
     rm -f /var/run/my_process.pid
+}
+restart() {
+    pkill -f manage_my_process &
+    rm -f /var/run/my_process.pid
+    ./manage_my_process &
+    echo "$!" > /var/run/my_process.pid
 }
 case "$1" in
     start)
