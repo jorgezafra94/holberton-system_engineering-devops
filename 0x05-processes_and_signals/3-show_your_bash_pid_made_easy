@@ -3,6 +3,6 @@
 list="$(pidof bash)"
 for i in $list
 do
-    echo -n $i
+    echo -n "$i"
     echo " bash"
 done
