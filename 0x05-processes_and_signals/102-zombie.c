@@ -4,6 +4,7 @@
 #include <sys/types.h>
 /**
  * infinite_while - infinite loop
+ *
  * Return: 0
  */
 int infinite_while(void)
@@ -15,8 +16,9 @@ int infinite_while(void)
 	return (0);
 }
 /**
- *main - main function
- *Return: 0 success
+ * main - main function
+ *
+ * Return: 0 success
  */
 int main(void)
 {
@@ -29,7 +31,7 @@ int main(void)
 		if (child_pid == 0)
 		{
 			dprintf(1, "Zombie process created, PID: %d\n", getpid());
-			exit(0);
+			return (0);
 		}
 	}
 	infinite_while();
