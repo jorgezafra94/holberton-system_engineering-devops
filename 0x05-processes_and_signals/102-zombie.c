@@ -16,9 +16,9 @@ int infinite_while(void)
 }
 /**
  *main - main function
- *Return: Nothing
+ *Return: 0 success
  */
-void main(void)
+int main(void)
 {
 	int i = 0;
 	pid_t child_pid;
@@ -33,4 +33,5 @@ void main(void)
 		}
 	}
 	infinite_while();
+	return (0);
 }
