@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # do a ping 5 times for an specific IP
 x="$#"
-if [ "$x" -eq 1 ]
+if [ "$x" -ge 1 ]
     then
     ping -c 5 "$1"
 else
