@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# configure a new nginx web server
+# based on https://www.liquidweb.com/kb/redirecting-urls-using-nginx/
+# HTTP 301 move permanent
 # install the Nginx
 sudo apt-get -y update
 sudo apt-get -y install nginx
