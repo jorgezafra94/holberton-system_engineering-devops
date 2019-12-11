@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# turning on a web server (apache2)
+sudo service apache2 start
