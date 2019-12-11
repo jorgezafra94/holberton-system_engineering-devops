@@ -9,7 +9,8 @@ exec {'content index':
   provider => shell,
 }
 exec {'config in default':
-  command  => 'sudo sed -i "s/server_name _;/server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;/" /etc/nginx/sites-available/default',
+  cwd      => '/etc/nginx/sites-available/',
+  command  => 'sudo sed -i "s/server_name _;/server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;/" default',
   provider => shell,
 }
 exec {'restart Nginx':
