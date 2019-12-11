@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-#commands in puppet in order to configure our Nginx
+# commands in puppet in order to configure our Nginx
 exec {'install':
-  command  => 'sudo apt-get -y update; sudo apt-get -y install nginx',
+  command  => 'sudo apt-get -y update && sudo apt-get -y install nginx',
   provider => shell,
 }
 exec {'content index':
@@ -9,10 +9,10 @@ exec {'content index':
   provider => shell,
 }
 exec {'config in default':
-  command  => 'cd /etc/nginx/sites-available/ && var="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;"|sudo sed -i "s/server_name _;/$var/" default && cd -',
+  command  => 'sudo sed -i "s/server_name _;/server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;/" /etc/nginx/sites-available/default',
   provider => shell,
 }
-exec {'restart':
+exec {'restart Nginx':
   command  => 'sudo service nginx restart',
   provider => shell,
 }
