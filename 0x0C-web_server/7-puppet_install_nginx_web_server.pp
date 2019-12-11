@@ -1,3 +1,4 @@
+#commands in puppet in order to configure our Nginx
 package {'nginx':
   ensure => 'installed',
 }
