@@ -1,6 +1,7 @@
 #commands in puppet in order to configure our Nginx
-package {'nginx':
-  ensure => 'installed',
+exec {'install':
+  command  => 'sudo apt-get -y update; sudo apt-get -y install nginx',
+  provider => shell,
 }
 file {'/var/www/html/index.html':
   path    => '/var/www/html/index.html',
