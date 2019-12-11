@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 #commands in puppet in order to configure our Nginx
 exec {'install':
   command  => 'sudo apt-get -y update; sudo apt-get -y install nginx',
