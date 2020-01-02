@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# installing haproxy and configure it
+sudo apt-get -y install software-properties-common
+sudo add-apt-repository -y ppa:vbernat/haproxy-2.0
+sudo apt-get -y update
+sudo apt-get -y install haproxy=2.0.\*
+# configuration of load balancer
+# frontend
+echo -e "\nfrontend haproxynode\n\tbind *:80\n\tmode http\n\tdefault_backend myservers\n\n"| sudo tee -a /etc/haproxy/haproxy.cfg
+# backend
+echo -e "backend myservers\n\tbalance roundrobin\n\tserver web-01 35.227.82.74:80 check\n\tserver web-02 35.231.166.249:80 check"|sudo tee -a /etc/haproxy/haproxy.cfg
+sudo service haproxy restart
