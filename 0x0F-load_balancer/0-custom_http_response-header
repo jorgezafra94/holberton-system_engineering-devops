@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 # add a HTTP Header
+# install the Nginx
+sudo apt-get -y update
+sudo apt-get -y install nginx
+# enable pass of traffic in the port 80
+sudo ufw allow 'Nginx HTTP'
 # get the name of the hostname
 name=$HOSTNAME
 # configure the file nginx.conf in order the set the header
