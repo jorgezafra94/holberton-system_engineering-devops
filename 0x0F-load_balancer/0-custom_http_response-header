@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# add a HTTP Header
+# get the name of the hostname
+name=$HOSTNAME
+# configure the file nginx.conf in order the set the header
+sudo sed -i "s/include \/etc\/nginx\/sites-enabled\/\*;/include \/etc\/nginx\/sites-enabled\/\*;\n\t# Adding Header/" /etc/nginx/nginx.conf
+sudo sed -i "s/# Adding Header/# Adding Header \n\tadd_header X-Served-By $name;/" /etc/nginx/nginx.conf
+sudo service nginx reload
