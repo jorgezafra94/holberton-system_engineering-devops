@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# script sweet and short to fix problem, careful we stop with kill -9
+# script for fix problem stop process instead of kill it
 sudo sed -i "s/8080/80/g" /etc/nginx/sites-enabled/default
 sudo service nginx restart
-sudo kill -9 `cat /run/nginx.pid`
+sudo kill -9 "$(cat /run/nginx.pid)"
