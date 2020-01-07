@@ -48,7 +48,8 @@ frontend www-https
       	default_backend myservers
 
 backend myservers
-	redirect scheme https if !{ ssl_fc }
+	# the next commnad is for block the http way and only enable the https 443 
+	# redirect scheme https if !{ ssl_fc }
 	balance roundrobin
 	server web-01 35.227.82.74:80 check
 	server web-02 35.231.166.249:80 check
