@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # function that verifies the subdomains
 my_func ()
 {
