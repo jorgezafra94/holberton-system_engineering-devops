@@ -1,0 +1,52 @@
+#!/bin/bash
+# function that verifies the subdomains
+my_func ()
+{
+    www="www"
+    lb="lb-01"
+    web1="web-01"
+    web2="web-02"
+    if [ "$#" -eq 1 ]
+    then
+	count=0
+	while [ $count -lt 4 ]
+	do
+	    if [ $count -eq 0 ]
+	    then
+		sub=$www
+		var=$www"."$1
+	    elif [ $count -eq 1 ]
+	    then
+		sub=$lb
+		var=$lb"."$1
+	    elif [ $count -eq 2 ]
+	    then
+		sub=$web1
+		var=$web1"."$1
+	    else
+		sub=$web2
+		var=$web2"."$1
+	    fi
+	   type=$(dig "$var" |grep -A1 'ANSWER SECTION:'| grep "$1" |awk \{'print $4'\})
+	   destino=$(dig "$var" |grep -A1 'ANSWER SECTION:'| grep "$1" |awk \{'print $5'\})
+	   echo "The subdomain $sub is a $type record and points to $destino"
+	   count=$((count + 1))
+	done
+    else
+	sub=$2
+	var=$2"."$1
+	type=$(dig "$var" | grep -A1 'ANSWER SECTION:'| grep "$1" |awk \{'print $4'\})
+	destino=$(dig "$var" |grep -A1 'ANSWER SECTION:'| grep "$1" |awk \{'print $5'\})
+	echo "The subdomain $sub is a $type record and points to $destino"
+    fi
+}
+
+if [ "$#" -ge 1 ]
+   then
+       if [ "$#" -gt 1 ]
+          then
+	      my_func "$1" "$2"
+       else
+	   my_func "$1"
+    fi
+fi
