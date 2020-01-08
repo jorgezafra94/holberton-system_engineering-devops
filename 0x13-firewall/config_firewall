@@ -7,12 +7,12 @@ sudo apt-get install -y ufw
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
 # first off all allow the ssh = 22 BEFORE the firewall
-sudo ufw allow 22
-# enable firewall
-sudo ufw enable
+sudo ufw allow 22/tcp
 # enable incoming for https=443 and http=80
 # we can also type sudo uft allow http or sudo allow https
-sudo ufw allow 443
-sudo ufw allow 80
+sudo ufw allow 443/tcp
+sudo ufw allow 80/tcp
+# enable firewall
+sudo ufw enable
 # if you wanna check the configuration
 # run: sudo ufw status numbered
