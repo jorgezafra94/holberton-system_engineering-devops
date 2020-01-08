@@ -3,9 +3,9 @@
 # use netstat -tupln for see listen ports then remove apache2 from 8080
 sudo pkill -o apache2
 # add user in /etc/nginx/nginx.config and give it permissions
-chmod 700 /etc/nginx/nginx.conf
-sed -i '3i\\n user nginx;' /etc/nginx/nginx.conf
+chmod 744 /etc/nginx/nginx.conf
+sudo sed -i '3i\\n user nginx;' /etc/nginx/nginx.conf
 # change content of /etc/nginx/sites-availble/default
 sudo sed -i "s/80/8080/g" /etc/nginx/sites-available/default
 # restart the nginx service
-sudo service nginx restart
+su nginx -c 'service nginx restart'
