@@ -33,6 +33,6 @@ if __name__ == "__main__":
             done_tasks.append(elem)
     done = len(done_tasks)
 
-    print("Employee {} is done with tasks ({}/{}):".format(name, done, total))
+    print("Employee {} is done with tasks({}/{}):".format(name, done, total))
     for elem in done_tasks:
         print("\t {}".format(elem.get("title")))
