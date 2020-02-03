@@ -28,7 +28,6 @@ if __name__ == "__main__":
         fieldnames = ['user_id', 'username', 'status', 'title']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames,
                                 delimiter=',', quoting=csv.QUOTE_ALL)
-        writer.writeheader()
         for elem in tasks:
             writer.writerow({'user_id': sys.argv[1], 'username': username,
                              'status': elem.get("completed"),
