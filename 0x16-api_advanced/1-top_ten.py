@@ -17,11 +17,13 @@ def top_ten(subreddit):
     API = 'https://www.reddit.com/'
     r = requests.get('{}/r/{}/hot.json'.format(API, subreddit),
                      headers={'user-agent': 'Custom user'},
-                     params={'limit': 10})
+                     params={'limit': 10},
+                     allow_redirects=False)
 
     # if an invalid subreddit get in
     if r.status_code != 200:
-        return(0)
+        print(None)
+        return(None)
 
     # if it passes
     r = r.json()
