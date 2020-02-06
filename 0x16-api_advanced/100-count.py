@@ -7,7 +7,7 @@ def recurse(subreddit, word_list, count_list=[], next=None, count=0):
     """ function that calls the reddit api in order to get
     the top 10 in a specific topic
     """
-    import shlex
+    from shlex import split
     import requests
 
     if count == 0:
@@ -37,11 +37,10 @@ def recurse(subreddit, word_list, count_list=[], next=None, count=0):
     if next:
         result = recurse(subreddit, word_list, count_list, next, count + 1)
     for elem in new:
-        palabras = elem.replace("\'", ' ')
-        palabras = shlex.split(palabras)
+        palabras = elem.split(" ")
         for i in range(len(word_list)):
             for word in palabras:
-                if word_list[i] == word:
+                if word_list[i].lower() == word.lower():
                     count_list[i] = count_list[i] + 1
 
     dic = {}
