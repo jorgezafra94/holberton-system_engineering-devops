@@ -14,7 +14,8 @@ def number_of_subscribers(subreddit):
     # data of listing endpoints.
     API = 'https://www.reddit.com/'
     r = requests.get('{}/r/{}/about.json'.format(API, subreddit),
-                     headers={'user-agent': 'Custom user'})
+                     headers={'user-agent': 'Custom user'},
+                     allow_redirects=False)
 
     # if an invalid subreddit get in
     if r.status_code != 200:
