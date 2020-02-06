@@ -57,10 +57,11 @@ def count_words(subreddit, word_list):
     new = []
     for elem in result:
         if result[elem] != 0:
-            new.append(elem)
+            new.append(result[elem])
     new.sort()
+    new.reverse()
     for elem in new:
         for key in result:
-            if key is elem:
+            if result[key] is elem:
                 print("{}: {}".format(key, result[key]))
     return (result)
