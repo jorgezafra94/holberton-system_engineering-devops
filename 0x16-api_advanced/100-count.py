@@ -53,14 +53,16 @@ def count_words(subreddit, word_list):
     """ counts words
     """
     result = recurse(subreddit, word_list)
-    new = []
-    for elem in result:
-        if result[elem] != 0:
-            new.append(result[elem])
-    new.sort()
-    new.reverse()
-    for elem in new:
-        for key in result:
-            if result[key] is elem:
-                print("{}: {}".format(key, result[key]))
-    return (result)
+    if result:
+        new = []
+        for elem in result:
+            if result[elem] != 0:
+                new.append(result[elem])
+        new.sort()
+        new.reverse()
+        for elem in new:
+            for key in result:
+                if result[key] is elem:
+                    print("{}: {}".format(key, result[key]))
+    else:
+        print("")
