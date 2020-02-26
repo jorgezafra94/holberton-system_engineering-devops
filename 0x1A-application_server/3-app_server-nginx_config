@@ -59,11 +59,11 @@ server {
 	        include proxy_params;
 		proxy_pass http://localhost:5000/airbnb-onepage/;
 	}
-
-        location /airbnb-dynamic/number_odd_or_even/ {
-		proxy_pass http://localhost:5001/number_odd_or_even/;
-	}					      
-
+	location /airbnb-dynamic/number_odd_or_even/ {
+	    	rewrite /airbnb-dynamic/(.*)$ /$1 break;
+		include proxy_params;
+		proxy_pass http://0.0.0.0:5001/number_odd_or_even/;
+	}
 	# location / {
 		# First attempt to serve request as file, then
 		# as directory, then fall back to displaying a 404.
